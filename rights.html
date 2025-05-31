@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions Zyro Market</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            background: #791111;
+            opacity: 0;
+            transition: opacity 1.5s; /* verleng naar 1.5s */
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        .bg-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('test123.jpg') center center/cover no-repeat;
+            filter: blur(8px);
+            z-index: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgb(228, 222, 222);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #858181;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #000000;
+            text-decoration: none;
+        }
+        .back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <div class="container">
+        <h2>Terms and Conditions</h2>
+        <p>Below is an overview of the rights you have as a customer and the rights we have as a company.</p>
+
+        <h3>Your rights as a customer:</h3>
+        <ul>
+            <li>You have the right to get your money back if the service is not delivered as promised.</li>
+            <li>You have the right to own the services you have paid for.</li>
+            <li>You can contact customer service for questions or complaints by making a ticket on discord.</li>
+        </ul>
+
+        <h3>Our rights as a organisation:</h3>
+        <ul>
+            <li>We have the right to change prices (with prior notice).</li>
+            <li>We have the right to ban discord accounts in case of abuse or violation of our terms.</li>
+            <li>We have the right to temporarily suspend the service for maintenance or updates.</li>
+        </ul>
+
+        <a href="home page.html" class="back">Back to homepage</a>
+    </div>
+<script>
+  // Fade-in effect bij laden
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+    }, 100);
+  });
+
+  // Fade-out effect bij teruggaan
+  document.querySelectorAll('a.back').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.remove('loaded');
+      setTimeout(() => {
+        window.location = this.href;
+      }, 1500); // zelfde tijd als transition in CSS
+    });
+  });
+</script>
+</body>
+</html>
